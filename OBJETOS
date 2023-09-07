@@ -1,0 +1,133 @@
+/* aula de objetos
+Para ser objeto precisa receber chave:
+const professor = {
+nome : 'Vitor' , //cada elemento com vírgula seria uma " propriedade".
+idade: 27 ,
+email: 'vitor@gmail.com'
+ }
+    //acessando valores em um obj 
+ notação de ponto 
+console.log(professor.idade);
+    notação de []
+console.log(professor["email"]); */
+const professor = {
+    nome : 'Vitor' , //cada elemento com vírgula seria uma " propriedade".
+    idade: 27 ,
+    email: 'vitor@gmail.com'
+}
+    
+        //acessando valores em um obj 
+     console.log(professor.idade);
+     console.log(professor["email"]);
+     //alterando valores
+    professor.nome = 'Mika'
+    professor['email'] = 'profmika@gmail.com'
+     console.log(professor.nome);
+     console.log(professor['email']);
+
+
+//exercício
+const direcao = {
+    nome: 'Morro do vento',
+    anoDeLancamento: 2011,
+    elenco: ['Maria', 'Murilo', 'Bnedetto', 'Marcela'],
+    visto: Boolean('sim'),
+    direcao: 'paulo fagundes',
+    
+}
+console.log(direcao.nome);
+console.log(direcao['anoDeLancamento']);
+console.log(direcao.elenco);
+console.log(direcao['visto']);
+console.log(direcao['direcao']);
+direcao['personagens']=  ['Duda', 'Fernandes', 'Dudu', 'Olivia'];
+console.log(direcao.elenco[0] + 'da a vida para ' + direcao.personagens[0]);
+console.log(direcao.elenco[1] + 'da a vida para ' + direcao.personagens[1]);
+console.log(direcao.elenco[2] + 'da a vida para ' + direcao.personagens[2]);
+console.log(direcao.elenco[3] + 'da a vida para ' + direcao.personagens[3]);
+
+direcao.elenco[0] = 'Xuxa';
+console.log(direcao);
+
+
+//2
+const pessoa ={
+    nome: 'Paula',
+    idade: 15,
+    generomusicalfav: 'funk',
+}
+console.log("O nome da pessoa é " +pessoa.nome+ " ,ela tem " +pessoa.idade+ " anos e gosta muito de" +pessoa.generomusicalfav);
+
+//acessando valores diferentes
+/*objeto dentro de um objeto*/
+const donoDoPet = {
+    nome: 'Victor Hugo',
+    pet:{
+        nomeDoPet: 'Wanda',
+        raca: 'viralata',
+        idade: 1
+    }
+}
+console.log(donoDoPet.pet.nomeDoPet);
+
+/* acessando array dentro de um objeto*/
+const curso = {
+    linguagens: ['JS', 'CSS', 'HTML'],
+    nome: 'noturno frontend',
+}
+console.log(curso.linguagens[0]);
+
+/*objeto dentro de um array*/
+
+const professores = [
+    {nome: 'Andrei', modulo: 1},
+    {nome: 'Vitor', modulo: 2},
+    {nome: 'Mina', modulo: 3},
+
+]
+console.log(professores[1].nome);
+
+/*adicionando propriedade*/
+const curso2 = {
+    nome: 'Frontend',
+    linguagens: ['JS', 'CSS', 'HTML'],
+
+}
+curso.numeroEstudantes = 50; //notação com ponto.
+curso['numeroEstudante'] = 50; //notação com []
+
+//3
+/* adicionar lista de personagem exercício 1.*/
+
+/* ESPALHAMENTO OU SPREAD: copiamos um objeto e espalhamos o outro com as mesmas propriedades porém outros valores.*/
+const usuario ={
+    nome: 'Prof',
+    idade: 25,
+    email:'emailex@gmail.com',
+    cidade: 'SP',
+}
+const outroUsuario = {
+    ...usuario,
+    nome: 'Mia',
+    idade: 28 ,
+}
+//com arrays:
+/*PARA REESCREVER UM ARRAY _SEMPRE_ SE PÕE A POSIÇÃO[] DELE QUE QUERES REESCREVER*/
+const listaDeNomes = ['mina', 'luis', 'fernando'];
+const copiaNomes = [...listaDeNomes]
+copiaNomes[0]= 'Vitor';
+console.log(copiaNomes);
+
+//4
+function pessoa1(pessoa2){
+    const pessoaNova = {
+        ...pessoa2,
+        melhorAmigo: {
+            nome: 'Carlos',
+            idade: 12 ,
+        }
+    
+    }
+    pessoa.comidasFvaritas = ['Sorvete', 'abacaxi', 'morango'];
+   console.log('O nome da pessoa é ' +pessoa.nome+ ' e suas comidas favoritas são ' +pessoa.comidasFvaritas[0]+ ',' +pessoa.comidasFvaritas[1]+ ' e' +pessoa.comidasFvaritas[2]+ '. Seu melhor amigo é ' +pessoa.melhorAmigo.nome+ ' e tem ' +pessoa.melhorAmigo.idade+ ' anos.');
+}
